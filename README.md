@@ -1,5 +1,5 @@
 # AzRM-Toolbox
-azimuthal reflectivity modeling (AzRM) tool
+Azimuthal reflectivity modeling (AzRM) tool
 AzRM MATLAB Package
 
 This repository contains the MATLAB implementation of the Azimuthal Reflectivity Method (AzRM), supporting both VTI and orthorhombic (OA) media. It is developed for modeling azimuthally anisotropic seismic responses, and supports AVA/AVAZ analysis and synthetic gather generation.
@@ -76,15 +76,7 @@ plotseis_AzRM.m:Visualization utility to display angle gathers.(Provided by the 
 
 📚 References
 
-Fryer & Frazer (1984, 1987): Seismic waves in stratified anisotropic media
-
-Rüger (2002): Reflection coefficients and azimuthal AVO analysis
-
-Graebner (1992): Exact VTI reflectivity
-
-Chen et al. (2017): AVAZ inversion using azimuthal elastic impedance
-
-Schoenberg & Douma (1988), Schoenberg & Helbig (1997): Fracture weaknesses and orthorhombic theory
+Yang R, Chen H, Guo Z, et al. An effective azimuthal reflectivity modeling (AzRM) tool for generating seismic data in anisotropic shale reservoirs[J]. Geophysics, 2025, 90(5): 1-76.
 
 📌 Notes
 
