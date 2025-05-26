@@ -8,13 +8,13 @@ This repository contains the MATLAB implementation of the Azimuthal Reflectivity
 
 The package includes the following components:
 
-loadmodel_OA.txt / loadmodel_VTI.txt:Input model files. Each row defines one layer:
+loadmodel_OA.txt / loadmodel_VTI.txt: Input model files. Each row defines one layer:
 
-VTI model format:thickness(km) vp(km/s) vs(km/s) density(g/cm³) epsilon delta gamma
+VTI model format: thickness(km) vp(km/s) vs(km/s) density(g/cm³) epsilon delta gamma
 
-OA model format:thickness(km) vp(km/s) vs(km/s) density(g/cm³) epsilon delta gamma e (fracture density)
+OA model format: thickness(km) vp(km/s) vs(km/s) density(g/cm³) epsilon delta gamma e (fracture density)
 
-parameters_OA.txt / parameters_VTI.txt:Input parameter files specifying modeling and wavelet settings.
+parameters_OA.txt / parameters_VTI.txt: Input parameter files specifying modeling and wavelet settings.
 
 VTI parameters:
 
@@ -38,39 +38,25 @@ phi0: fracture orientation (°)
 
 Main Functions
 
-main_AzRM_VTI.m / main_AzRM_OA.m:Main drivers. These perform:
+main_AzRM_VTI.m / main_AzRM_OA.m: Main drivers. These perform: Synthetic seismic gather computation, Time-depth conversion, AVA/AVAZ extraction and plotting, Core Algorithms.
 
-Synthetic seismic gather computation
+Stiffness_matrix_VTI.m / Stiffness_matrix_OA.m: Compute the stiffness tensor of VTI or OA media using equivalent medium theory.
 
-Time-depth conversion
+AzRM_VTI.m / AzRM_OA.m: Core Azimuthal Reflectivity Method. For each frequency and angle: Computes PP reflection coefficients, Applies Ricker wavelet in frequency domain, Performs inverse FFT to time domain.
 
-AVA/AVAZ extraction and plotting
+compute_eig_VTI.m / compute_eig_OA.m: Compute eigenvalues and eigenvectors of elastodynamic system matrices, per layer and slowness. This is the core of anisotropic wave modeling.
 
-Core Algorithms
+compute_Rpp_VTI.m / compute_Rpp_OA.m: Compute reflection and transmission matrices using the Fryer-Frazer iterative method.
 
-Stiffness_matrix_VTI.m / Stiffness_matrix_OA.m:Compute the stiffness tensor of VTI or OA media using equivalent medium theory.
+Comparison Methods: 
 
-AzRM_VTI.m / AzRM_OA.m:Core Azimuthal Reflectivity Method. For each frequency and angle:
+Ruger_VTI.m: Approximated reflection coefficient modeling for VTI media (Rüger, 2002)
 
-Computes PP reflection coefficients
+Graebner_VTI.m: Exact reflection coefficient computation (Graebner, 1992)
 
-Applies Ricker wavelet in frequency domain
+Ruger_OA.m: Approximate AVAZ modeling for OA media using Rüger + Chen formulation
 
-Performs inverse FFT to time domain
-
-compute_eig_VTI.m / compute_eig_OA.m:Compute eigenvalues and eigenvectors of elastodynamic system matrices, per layer and slowness. This is the core of anisotropic wave modeling.
-
-compute_Rpp_VTI.m / compute_Rpp_OA.m:Compute reflection and transmission matrices using the Fryer-Frazer iterative method.
-
-Comparison Methods
-
-Ruger_VTI.m:Approximated reflection coefficient modeling for VTI media (Rüger, 2002)
-
-Graebner_VTI.m:Exact reflection coefficient computation (Graebner, 1992)
-
-Ruger_OA.m:Approximate AVAZ modeling for OA media using Rüger + Chen formulation
-
-Plotting
+Plotting: 
 
 plotseis_AzRM.m:Visualization utility to display angle gathers.(Provided by the CREWES Project, University of Calgary. Ownership: G.F. Margrave & CREWES)
 
