@@ -13,6 +13,7 @@ loadmodel_OA.txt / loadmodel_VTI.txt: Input model files. Each row defines one la
 VTI model format: thickness(km) vp(km/s) vs(km/s) density(g/cm³) epsilon delta gamma
 
 OA model format: thickness(km) vp(km/s) vs(km/s) density(g/cm³) epsilon delta gamma e (fracture density)
+
 (For the Orthorhombic case, I use Schoenberg's LSD model to establish the relationship between fracture compliance and stiffness coefficients. The fracture density obtained is based on the equivalent medium theory, which considers all layered media as a whole.)
 
 parameters_OA.txt / parameters_VTI.txt: Input parameter files specifying modeling and wavelet settings.
